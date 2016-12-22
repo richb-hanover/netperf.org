@@ -1,0 +1,295 @@
+<!-- Creator     : groff version 1.19.2 -->
+<!-- CreationDate: Thu Dec 22 08:26:50 2016 -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="generator" content="groff -Thtml, see www.gnu.org">
+<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+<meta name="Content-Style" content="text/css">
+<style type="text/css">
+       p     { margin-top: 0; margin-bottom: 0; }
+       pre   { margin-top: 0; margin-bottom: 0; }
+       table { margin-top: 0; margin-bottom: 0; }
+</style>
+<title>netperf</title>
+
+</head>
+<body>
+
+<h1 align=center>netperf</h1>
+
+<a href="#NAME">NAME</a><br>
+<a href="#SYNOPSIS">SYNOPSIS</a><br>
+<a href="#DESCRIPTION">DESCRIPTION</a><br>
+<a href="#BUGS">BUGS</a><br>
+<a href="#SEE ALSO">SEE ALSO</a><br>
+<a href="#AUTHORS">AUTHORS</a><br>
+
+<hr>
+
+
+<a name="NAME"></a>
+<h2>NAME</h2>
+
+
+<p style="margin-left:11%; margin-top: 1em">netperf &minus;
+a network performance benchmark</p>
+
+<a name="SYNOPSIS"></a>
+<h2>SYNOPSIS</h2>
+
+
+<p style="margin-left:11%; margin-top: 1em"><b>netperf</b>
+[global options] -- [test specific options]</p>
+
+<a name="DESCRIPTION"></a>
+<h2>DESCRIPTION</h2>
+
+
+<p style="margin-left:11%; margin-top: 1em"><b>Netperf</b>
+is a benchmark that can be used to measure various aspects
+of networking performance. Currently, its focus is on bulk
+data transfer and request/response performance using either
+TCP or UDP, and the Berkeley Sockets interface. In addition,
+tests for DLPI, the Fore ATM API, Unix Domain Sockets, and
+HP HiPPI LLA may be conditionally compiled-in.</p>
+
+<p style="margin-left:11%; margin-top: 1em"><b>GLOBAL
+OPTIONS <br>
+&minus;a sizespec</b></p>
+
+<p style="margin-left:22%;">Alter the send and receive
+buffer alignments on the local system. This defaults to 8
+bytes.</p>
+
+<p style="margin-left:11%;"><b>&minus;A sizespec</b></p>
+
+<p style="margin-left:22%;">As -a, but for the remote
+system.</p>
+
+<p style="margin-left:11%;"><b>&minus;c [rate]</b></p>
+
+<p style="margin-left:22%;">Request CPU utilization and
+service demand calculations for the local system. If the
+optional rate parameter is specified, <b>netperf</b> will
+use that instead of calculating the rate itself.</p>
+
+<p style="margin-left:11%;"><b>&minus;C [rate]</b></p>
+
+<p style="margin-left:22%;">As -c, but for the remote
+system.</p>
+
+<table width="100%" border=0 rules="none" frame="void"
+       cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="3%">
+
+
+
+<p style="margin-top: 1em" valign="top"><b>&minus;d</b></p> </td>
+<td width="8%"></td>
+<td width="78%">
+
+
+<p style="margin-top: 1em" valign="top">Increase the
+quantity of debugging output displayed during a test
+(possibly at the expense of performance).</p></td>
+</table>
+
+<p style="margin-left:11%;"><b>&minus;f GMKgmk</b></p>
+
+<p style="margin-left:22%;">Change the units of measure for
+stream tests. Capital letters are powers of two, lowercase
+are powers of ten.</p>
+
+<p style="margin-left:11%;"><b>&minus;F fill_file</b></p>
+
+<p style="margin-left:22%;">Pre-fill the send buffers with
+data from the named file. This is intended to provide a
+means for avoiding buffers that are filled with data which
+is trivially easy to compress. A good choice for a file that
+should be present on any system is this manpage -
+netperf.man. Other files may be provided as part of the
+distribution.</p>
+
+<table width="100%" border=0 rules="none" frame="void"
+       cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="3%">
+
+
+
+<p style="margin-top: 1em" valign="top"><b>&minus;h</b></p> </td>
+<td width="8%"></td>
+<td width="50%">
+
+
+<p style="margin-top: 1em" valign="top">Display a usage
+string, and exit.</p></td>
+<td width="28%">
+</td>
+</table>
+
+<p style="margin-left:11%;"><b>&minus;H remote_host</b></p>
+
+<p style="margin-left:22%;">Set the hostname (or IP
+address) of the remote system.</p>
+
+<p style="margin-left:11%;"><b>&minus;i max,min</b></p>
+
+<p style="margin-left:22%;">Set the maximum and minimum
+number of iterations when trying to reach certain confidence
+levels.</p>
+
+<p style="margin-left:11%;"><b>&minus;I
+lvl,[,intvl]</b></p>
+
+<p style="margin-left:22%;">Specify the confidence level
+(either 95 or 99 - 99 is the default) and the width of the
+confidence interval as a percentage (default 10)</p>
+
+<p style="margin-left:11%;"><b>&minus;l testlen</b></p>
+
+<p style="margin-left:22%;">Specify the length of the test
+(default 10 seconds). A negative value sets the number of
+request/response transactions, or the number of bytes for a
+stream test.</p>
+
+<p style="margin-left:11%;"><b>&minus;o sizespec</b></p>
+
+<p style="margin-left:22%;">Set an offset from the
+alignment specified with -a.</p>
+
+<p style="margin-left:11%;"><b>&minus;O sizespec</b></p>
+
+<p style="margin-left:22%;">As -o, but for the remote
+system.</p>
+
+<p style="margin-left:11%;"><b>&minus;p portnum</b></p>
+
+<p style="margin-left:22%;">Connect to a listening on the
+specified port, rather than using /etc/services.</p>
+
+<table width="100%" border=0 rules="none" frame="void"
+       cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="9%">
+
+
+<p style="margin-top: 1em" valign="top"><b>&minus;P
+0|1</b></p> </td>
+<td width="2%"></td>
+<td width="63%">
+
+
+<p style="margin-top: 1em" valign="top">Show (1) or
+suppress (0) the test banner.</p></td>
+<td width="15%">
+</td>
+</table>
+
+<p style="margin-left:11%;"><b>&minus;t testname</b></p>
+
+<p style="margin-left:22%;">Specify the test to perform.
+Valid testnames are (but not always compiled-in):</p>
+
+<p style="margin-left:32%;"><i>TCP_STREAM <br>
+TCP_RR <br>
+TCP_CRR <br>
+UDP_STREAM <br>
+UDP_RR <br>
+DLCO_STREAM <br>
+DLCO_RR <br>
+DLCL_STREAM <br>
+DLCL_RR <br>
+STREAM_STREAM <br>
+STREAM_RR <br>
+DG_STREAM <br>
+DG_RR <br>
+FORE_STREAM <br>
+FORE_RR <br>
+HIPPI_STREAM <br>
+HIPPI_RR <br>
+LOC_CPU <br>
+REM_CPU</i></p>
+
+<p style="margin-left:11%;"><b>&minus;v verbosity</b></p>
+
+<p style="margin-left:22%;">Set the verbosity level for the
+test (only with -P).</p>
+
+<table width="100%" border=0 rules="none" frame="void"
+       cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="3%">
+
+
+
+<p style="margin-top: 1em" valign="top"><b>&minus;V</b></p> </td>
+<td width="8%"></td>
+<td width="78%">
+
+
+<p style="margin-top: 1em" valign="top">Enable the
+copy-avoidance features (HP-UX 9.0 and later only).</p></td>
+</table>
+
+<p style="margin-left:11%; margin-top: 1em"><b>TEST
+SPECIFIC OPTIONS</b></p>
+
+<table width="100%" border=0 rules="none" frame="void"
+       cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="3%">
+
+
+<p valign="top"><b>&minus;h</b></p></td>
+<td width="8%"></td>
+<td width="78%">
+
+
+<p valign="top">Display a usage string based on the test
+name set with -t, and exit.</p></td>
+</table>
+
+<p style="margin-left:22%; margin-top: 1em">Please consult
+the netperf manual <i>Netperf: A Network Performance
+Benchamrk</i> (netperf.ps) for more information.</p>
+
+<a name="BUGS"></a>
+<h2>BUGS</h2>
+
+
+<p style="margin-left:11%; margin-top: 1em">There is a
+fairly large list of known defects and misfeatures in the
+manual. If you think you have found a bug, please send email
+to Rick Jones &lt;raj@cup.hp.com&gt;.</p>
+
+<a name="SEE ALSO"></a>
+<h2>SEE ALSO</h2>
+
+
+<p style="margin-left:11%; margin-top: 1em"><i>Netperf: A
+Network Performance Benchmark</i> <br>
+http://www.cup.hp.com/netperf/NetperfPage.html</p>
+
+<a name="AUTHORS"></a>
+<h2>AUTHORS</h2>
+
+
+<p style="margin-left:11%; margin-top: 1em">HP Information
+Networks Division - Networking Performance Team. <br>
+Rick Jones &lt;raj@cup.hp.com&gt; <br>
+Karen Choy HP IND <br>
+Dave Shield &lt;daves@csc.liv.ac.uk&gt; (man pages) <br>
+Others too numerous to mention here - see the ACKNWLDGMNTS
+file</p>
+<hr>
+</body>
+</html>
