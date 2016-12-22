@@ -2,7 +2,7 @@
 
 This site has substantially all the content from the original netperf.org site, revised to use Strapdown.js markup
 
-Strapdown is a Javascript library (https://strapdownjs.org) that takes Markdown text that's contained between `<xmp>` tags and converts it to attractive HTML. It is good for making small static sites look great.
+Strapdown is a Javascript library (http://strapdownjs.com/) that takes Markdown text that's contained between `<xmp>` tags and converts it to attractive HTML. It is good for making small static sites look great.
 
 The files in this repository preserve:
 
